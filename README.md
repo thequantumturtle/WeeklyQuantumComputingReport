@@ -1,16 +1,38 @@
-# WeeklyQuantumComputingReport
-Get your weekly news pipeline!
+# Weekly Quantum Computing Report
 
-## Scripts
+This project generates a weekly Markdown script summarizing the top quantum computing news.
 
-`scripts/fetch_news.py` uses the Google News RSS feed to find quantum related
-articles from the last seven days. It stores up to three results in
-`scripts/articles.json`.
+## Setup
 
+1. Create a virtual environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Create a `.env` file with your OpenAI API key:
+   ```env
+   OPENAI_API_KEY=your-key-here
+   ```
 
-# TODO
-- script to Find 3 news articles each week - python?
-- script to rip those articles and store them
-- script to pull stored scripts and combine them into a querriable state
-- script to feed querriable state to chatgpt
-- script to catch chatgpt Report and store it.
+## Configuration
+
+- `config.yaml` controls runtime options (summary length, output paths, etc.).
+- `news_sources.yaml` lists RSS feeds or sites to scrape.
+
+## Usage
+
+Run the full pipeline:
+```bash
+scheduler/cron_job.sh
+```
+
+This will:
+1. Fetch articles from the configured sources.
+2. Summarize them using the OpenAI model defined in `config.yaml` (falls back to article summaries if no API key).
+3. Render the final Markdown script using a Jinja2 template.
+
+Outputs are written to `data/processed/` with date-stamped filenames.
+
+## Notes
+
+- Placeholder comments exist for non-RSS site scraping.
+- The template includes an "Expert Take" section for custom commentary.
