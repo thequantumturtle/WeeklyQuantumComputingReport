@@ -1,0 +1,20 @@
+sources:
+  - name: arXiv Quantum Physics
+    type: rss
+    url: https://export.arxiv.org/rss/quant-ph
+
+  - name: IBM Research Blog
+    type: rss
+    url: https://research.ibm.com/blog/rss.xml
+
+  - name: Nature Quantum Information
+    type: rss
+    url: https://www.nature.com/subjects/quantum-information.rss
+
+  - name: Phys.org Quantum News
+    type: site
+    url: https://phys.org/physics-news/quantum-physics/
+
+  - name: Google News – Quantum Computing
+    type: site
+    url: https://news.google.com/rss/search?q=quantum+computing

@@ -1,0 +1,11 @@
+summary_length: 3
+output_format: markdown
+output_dir: data/processed/
+template_file: templates/weekly_script_template.md
+
+llm_model: gpt-4o
+max_articles: 10
+deduplicate: true
+
+logging_level: INFO
+openai_timeout: 30
